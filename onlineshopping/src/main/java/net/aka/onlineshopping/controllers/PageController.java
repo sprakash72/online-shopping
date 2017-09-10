@@ -14,6 +14,8 @@ public class PageController {
 
 		String str = "Welcome to Starting page";
 		view.addObject("Greeting", str); // adding of str object as "message"
+		view.addObject("homeClicked", true); 
+		view.addObject("title", "Home");
 											// parameter
 
 		return view;
@@ -34,6 +36,18 @@ public class PageController {
 		else
 			view.addObject("Name", nameText);
 		
+		return view;
+	}
+	
+	@RequestMapping(value = { "/about"})
+	public ModelAndView getAboutPage() {
+		ModelAndView view = new ModelAndView();
+		view.setViewName("shoppinghomepage"); // name of the jsp-file in the "page" folder
+
+		view.addObject("aboutClicked", true); 
+		view.addObject("title", "About");
+											// parameter
+
 		return view;
 	}
 
